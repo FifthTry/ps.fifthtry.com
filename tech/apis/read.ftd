@@ -1,0 +1,48 @@
+-- ft.page: Read API
+
+The purpose of read api is to return content of asked document.
+
+-- ft.h2: GET `/api/v1/read` Request Input
+- `/api/v1/read?package_name=<Package Name>&file_path=<File Path>`
+- `package_name`: Name of the FPM package
+- `file_path`: Absolute file path
+- `identity`: HTTP Header Auth cookie of user who is asking for content
+
+
+-- ft.h1: How to serve FTD files
+
+Firstly it will check user authentication, whether user has permission to read
+the document or not. To do this it will read `FPM.ftd` of the package and will
+check authentication according to sitemap, if user has read access it will
+return the document content with success status otherwise return with
+unauthorized status.
+
+
+-- ft.h1: How to serve static files
+
+TODO:
+
+-- ft.h1: Responses
+
+-- ft.h2: Success Response
+
+-- ftd.code:
+lang: json
+{
+    "success": true,
+    "code": "OK",
+    "data": {
+        "content": "file content",
+        "version": "file current version"
+    }
+}
+
+-- ft.h2: Error Response
+
+-- ftd.code:
+lang: json
+{
+    "success": false,
+    "code": "UN_AUTHORIZED", // May be not needed
+    "message": "You do not have access to read this document",
+}

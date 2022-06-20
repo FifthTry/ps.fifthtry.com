@@ -1,0 +1,5 @@
+ft.page: Package Store APIs
+
+Package Store exposes different APIs for reading and updating the content.
+Read API simply will return the content of the document and write API will
+update the document. It will also handle version control for documents.
