@@ -1,0 +1,25 @@
+-- ft.page: Write API
+
+The purpose of the write API is to update the content of the document and it's
+version.
+
+-- ft.h1: POST `/api/v1/write`
+
+- Headers:
+    - cookie: `identity`
+
+- URL
+    - `/api/v1/write`
+
+- Input Body
+
+-- ft.code:
+lang: json
+{
+    "path": "<Absolute file path>",
+    "content": "content of the file",
+    "version": "version of file, the Package Store send earlier"
+}
+
+-- ft.h1: How will it work
+

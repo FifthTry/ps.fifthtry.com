@@ -14,7 +14,8 @@ nav-title: Tech
 
 - Store : /tech/store/
 - APIs: /tech/apis/
-  - Write API: /tech/apis/write/
   - Read API: /tech/apis/read/
+  - Write API: /tech/apis/write/
+- Version: /tech/versioning/
 
 ## About: /tech/about/
