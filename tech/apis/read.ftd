@@ -8,10 +8,10 @@ The purpose of read API is to return content of asked document.
     - Cookie: `identity`
 
 - URL
-    - `/api/v1/read?package_name=<Package Name>&file_path=<File Path>`
+    - `/api/v1/read?package_name=<Package Name>&path=<File Path>`
 
 - `package_name`: Name of the FPM package
-- `file_path`: Absolute file path
+- `path`: Absolute file path
 - `identity`: HTTP Header Auth cookie of user who is asking for content
 
 
