@@ -12,9 +12,9 @@ zip: github.com/fifthtry/ps.fifthry.com/archive/refs/heads/main.zip
 # Tech: /tech/
 nav-title: Tech
 
-- Store : /tech/store
-- APIs: /tech/apis
-  - Write API: /tech/apis/write
-  - Read API: /tech/apis/read
+- Store : /tech/store/
+- APIs: /tech/apis/
+  - Write API: /tech/apis/write/
+  - Read API: /tech/apis/read/
 
 ## About: /tech/about/
