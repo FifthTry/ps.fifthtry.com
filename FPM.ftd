@@ -9,7 +9,9 @@ zip: github.com/fifthtry/ps.fifthry.com/archive/refs/heads/main.zip
 
 -- fpm.sitemap:
 
-# Tech Document: /tech/
-nav-title: My Sweet Home
+# Tech: /tech/
+nav-title: Tech
+
+- Store : /tech/store
 
 ## About: /tech/about/
