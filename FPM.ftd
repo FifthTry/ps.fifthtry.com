@@ -3,6 +3,13 @@
 -- fpm.package: fifthtry.github.io/ps.fifthry.com
 zip: github.com/fifthtry/ps.fifthry.com/archive/refs/heads/main.zip
 
--- fpm.dependency: fifthtry.github.io/doc-site as ds
+-- fpm.dependency: fifthtry.github.io/doc-site as ft
 
--- fpm.auto-import: ds
+-- fpm.auto-import: ft
+
+-- fpm.sitemap:
+
+# Tech Document: /tech/
+nav-title: My Sweet Home
+
+## About: /tech/about/

@@ -1,2 +1,2 @@
 # fpm-template
-FPM Blank Package Template Repo
+FPM Package Store Documentation Repo
