@@ -1,0 +1,77 @@
+-- ft.page: Write API
+
+The purpose of the write API is to update the content of the document and it's
+version.
+
+-- ft.h1: POST `/api/v1/write`
+
+- Headers:
+    - cookie: `identity`
+
+- URL
+    - `/api/v1/write`
+
+- Input Body
+
+-- ft.code:
+lang: json
+{
+    "package_name": "<Name of the package>",
+    "path": "<Absolute file path>",
+    "content": "content of the file",
+    "version": "version of file, the Package Store send earlier"
+}
+
+-- ft.h1: How will it work
+
+Get the document from database with request `path` and `package_name` and latest
+document version from `latest.ftd`, compare the input document version and
+latest version
+
+If both the versions are same:
+
+Merge the content of both, save it in database and calculate the new version
+version and update it into `latest.ftd`.
+
+If both the versions are not same:
+
+Then it has to perform three way merge, to perform three way merge it needs three
+documents to merge together, content coming in request, content from
+the database(latest version in the database) and least common ancestor of these
+two documents In performing three way merge, If there is conflict then return
+conflicted content If there are no conflicts then save merged content and into
+database with and update latest version in `latest.ftd` then return latest
+version of the document
+
+-- ft.code:
+lang: rs
+
+enum MergeOutput {
+    WithConflict(String),
+    WithNoConflict
+}
+
+-- ft.h1: Responses
+
+-- ft.h2: Success Response
+
+-- ftd.code:
+lang: json
+{
+    "success": true,
+    "code": "OK",
+    "data": {
+        "output": "merged output",
+        "version": "file latest version"
+    }
+}
+
+-- ft.h2: Error Response
+
+-- ftd.code:
+lang: json
+{
+    "success": false,
+    "code": "UN_AUTHORIZED", // May be not needed
+    "message": "You do not have access to update this document",
+}

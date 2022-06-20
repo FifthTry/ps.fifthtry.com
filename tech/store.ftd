@@ -1,0 +1,26 @@
+-- ft.page: Store
+
+Package Store will store the content as key-value pair. Key will be absolute file
+path and value will be file content.
+
+
+-- ft.h1: Models/Collections
+
+-- ft.h2: Package
+1. name
+2. about.ftd optional
+3. FPM.ftd
+4. latest.ftd
+
+
+-- ft.h2: Document
+1. path
+2. content
+
+
+-- ft.h1: How to Store static files
+
+
+-- ft.h1: Which Database we should select
+
+Options: Postgresql, MongoDB(Fast read, write and distributed)

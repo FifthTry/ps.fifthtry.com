@@ -1,0 +1,13 @@
+-- ft.page: What is Package Store
+
+-- ft.markdown:
+
+Package Store is a Microservice that stores FPM packages and serves content
+over HTTP.
+
+
+-- ft.h2: Related to FPM Serve
+
+1. `fpm serve` will run on dedicated machine with individual resources
+2. `fpm serve` will read required documents from Package Store.
+3. `fpm cli sync` will write content into Package Store.

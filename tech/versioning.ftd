@@ -1,0 +1,39 @@
+-- ft.page: Documents Versioning
+
+-- ft.h1: What Is Version Control
+
+Document version control is the process of tracking and managing different
+versions of a document so you know which is the current iteration of a file
+
+Version of a document is an Index that we store at everytime document gets
+updated.
+
+
+-- ft.h1: Why Version Control Is Important
+
+When drafting a new policy, new procedures, or a new document version control
+clearly identifies the development of the document. It is useful when working on
+a document with others; with version control, changes made by different
+individuals at different times can be clearly identified.
+
+Version control is important because then you know everyone is working from the
+same version of a document. This process is important because it helps keep an
+audit trail of how the file was changed, who has done the changes, whether or not
+they have been approved and when it all happened. For project managers, that's
+useful information.
+
+
+-- ft.h1: How Do We Implement It
+
+Whenever anyone will update any document, Package Store will maintain the
+version of each update. This information will get appended to `latest.ftd` file.
+
+
+-- ft.h2: Version Data Structure
+
+- path: file absolute path
+- hash: SHA256 of the content
+- author: Who has done this write
+- message: If provided any
+- datetime: When this has done
+- incremental version number

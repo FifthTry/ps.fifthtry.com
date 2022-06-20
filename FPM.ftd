@@ -1,8 +1,22 @@
 -- import: fpm
 
--- fpm.package: fifthtry.github.io/ps.fifthry.com
-zip: github.com/fifthtry/ps.fifthry.com/archive/refs/heads/main.zip
+-- fpm.package: fifthtry.github.io/ps.fifthtry.com
+zip: github.com/fifthtry/ps.fifthtry.com/archive/refs/heads/main.zip
 
--- fpm.dependency: fifthtry.github.io/doc-site as ds
+-- fpm.dependency: fifthtry.github.io/doc-site as ft
 
--- fpm.auto-import: ds
+-- fpm.auto-import: ft
+
+-- fpm.sitemap:
+
+# Tech: /tech/
+nav-title: Tech
+
+- Store : /tech/store/
+- APIs: /tech/apis/
+  - Read API: /tech/apis/read/
+  - Write API: /tech/apis/write/
+  - Sync API: /tech/apis/sync/
+- Version: /tech/versioning/
+
+## About: /tech/about/

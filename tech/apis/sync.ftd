@@ -1,0 +1,34 @@
+-- ft.page: `fpm sync` API
+
+In sync we will perform two way merge, Firstly It will pull content from
+Package Store (If any changes happened) to local client and if it succeed then
+it will request to merge client's local content to Package Store.
+
+-- ft.h1: How We Will Implement It
+
+-- ft.h2: Version 1
+
+- Client will ask `latest.ftd` from server(Package Store)
+- Then it will compare local content with server `latest.ftd`
+- If `latest.ftd` is diverged then it will ask updated files from Package Store
+- Server will send updated files to local
+- Client will update local content according to `latest.ftd`. It may be possible
+that conflicts occur and client has to solve conflicts. If any merged conflicts
+occurred `sync` will stop working.
+- Send updated file to server back. In this case it will use write API.
+- It may be possible till client send back updated content to server, server
+content has updated and conflicts occur. Then again client has to resolve
+conflicts and run `sync` again.
+
+-- ft.h2: Version 2
+
+- Client will send `latest.ftd` to server and server will compare client's
+`latest.ftd` and server's `latest.ftd` and send back updated content in
+response according to server's `latest.ftd`
+- Client will update this local content, If merge conflicts occurred then `sync`
+will stop it's process.
+- Client will send updated content back to server back. In this case it use
+write API.
+- It may be possible till client send back updated content to server, server
+content has updated and conflicts occur. Then again client has to resolve
+conflicts and run `sync` again.
